@@ -1,5 +1,7 @@
-There is a totorial about how to create a todo
+There is a tutorial about how to create a todo
 application using Play 2.0 framework with Scala.
+
+Here it is http://www.playframework.org/documentation/2.0/ScalaTodoList 
 
 But it uses Anorm Sql database.
 
@@ -8,7 +10,7 @@ finished up using Salat extention.
 
 How to use:
 
-Complete this tutorial if you didn't already do that www.playframework.org/documentation/2.0/ScalaTodoListhttp://www.playframework.org/documentation/2.0/ScalaTodoList 
+Complete the tutorial mentioned before if you didn't already do that.
 
 Replace project/Build.scala file by the one from this repo.
 
@@ -18,6 +20,6 @@ Replace other files in application by files from this repo.
 
 Don't forget to start mongodb daemon! It should use default host (localhost) and default port.
 
-Run the application, if everything works, congradulations, you've done it!
+Run the application, if everything works, congratulations, you've done it!
 
 Have fun!
