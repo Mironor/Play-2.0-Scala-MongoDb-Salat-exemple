@@ -1,19 +1,21 @@
 import sbt._
 import Keys._
-import PlayProject._
+import play.Project._
 
 object ApplicationBuild extends Build {
 
-    val appName         = "todo"
-    val appVersion      = "1.0-SNAPSHOT"
+  val appName         = "todoPlay"
+  val appVersion      = "1.0-SNAPSHOT"
 
-    val appDependencies = Seq(
-      "com.novus" %% "salat-core" % "0.0.8-SNAPSHOT"
-    )
+  val appDependencies = Seq(
+    "com.novus" %% "salat" % "1.9.2-SNAPSHOT",
+    jdbc,
+    anorm
+  )
 
-    val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
-      resolvers += "Novus Release Repository" at "http://repo.novus.com/releases/",
-      resolvers += "Novus Snapshots Repository" at "http://repo.novus.com/snapshots/"
-    )
+
+  val main = play.Project(appName, appVersion, appDependencies).settings(
+      resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+  )
 
 }

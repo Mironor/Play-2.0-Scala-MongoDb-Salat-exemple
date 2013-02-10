@@ -1,23 +1,26 @@
-First steps with Playframework 2.0 (Scala) and MongoDb (Salat)
+Updated for play 2.1
+
+
+First steps with Playframework 2.1 (Scala) and MongoDb (Salat)
 --------------------------------------------------
 
 In the official wiki there is a tutorial about how to create a todo
-application using Play 2.0 framework with Scala, you can find it here http://www.playframework.org/documentation/2.0/ScalaTodoList 
+application using Play 2.1 framework with Scala, you can find it here http://www.playframework.com/documentation/2.1.0/ScalaTodoList
 
 But it uses an Sql database.
 
 We will try to make it use MongoDb instead.
 
-We will use Salat library for MongoDb support (https://github.com/novus/salat). There is also an alternative "mongo-jackson-mapper" module for Play 2.0  which can be found here http://vznet.github.com/mongo-jackson-mapper , but it's somehow harder to use and it's not Scala specific, more about differences can be found here https://groups.google.com/d/msg/play-framework/K7IrXyXvL8w/SElGiQ5kPaEJ   
+We will use Salat library for MongoDb support (https://github.com/novus/salat). There is also an alternative "mongo-jackson-mapper" module for Play 2  which can be found here http://vznet.github.com/mongo-jackson-mapper , but it's somehow harder to use and it's not Scala specific, more about differences can be found here https://groups.google.com/d/msg/play-framework/K7IrXyXvL8w/SElGiQ5kPaEJ   
 
 Steps
 -----
 
-* Complete the tutorial mentioned before if you didn't already do that.
+* Complete the tutorial mentioned before if you haven't already done it.
 
 * Replace project/Build.scala file by the one from this repo.
 
-* Do "play dependencies" in your console (in the project's root folder)
+* Type "play dependencies" in the project's root folder.
 
 * Replace other files in your application by files from this repo.
 

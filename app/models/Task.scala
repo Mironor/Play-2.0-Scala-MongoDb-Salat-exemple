@@ -1,11 +1,15 @@
 package models
 
 import com.novus.salat._
-import com.novus.salat.global._
 import com.novus.salat.dao._
 
 import com.mongodb.casbah.commons.Imports._
 import com.mongodb.casbah.MongoConnection
+
+import com.novus.salat.Context
+
+import mongoContext._
+
 
 
 case class Task(_id: ObjectId = new ObjectId, label: String)
