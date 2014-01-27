@@ -1,45 +1,32 @@
-Updated for play 2.1
+Updated for play 2.2.1
+Added test specs
 
 
-First steps with Playframework 2.1 (Scala) and MongoDb (Salat)
+First steps with Playframework 2.2.1 (Scala) and MongoDb (Salat)
 --------------------------------------------------
 
-In the official wiki there is a tutorial about how to create a todo
-application using Play 2.1 framework with Scala, you can find it here http://www.playframework.com/documentation/2.1.0/ScalaTodoList
+Follow the official tutorial about how to create a todo application using Play 2.2.1 framework with Scala: http://www.playframework.com/documentation/2.2.x/ScalaTodoList
 
-But it uses an Sql database.
+It uses an Sql database (Anorm) and we will try to use MongoDb instead.
 
-We will try to make it use MongoDb instead.
-
-We will use Salat library for MongoDb support (https://github.com/novus/salat). There is also an alternative "mongo-jackson-mapper" module for Play 2  which can be found here http://vznet.github.com/mongo-jackson-mapper , but it's somehow harder to use and it's not Scala specific, more about differences can be found here https://groups.google.com/d/msg/play-framework/K7IrXyXvL8w/SElGiQ5kPaEJ   
+We will use Salat library for MongoDb (https://github.com/novus/salat). There is an alternative "mongo-jackson-mapper" module for Play 2  which can be found here http://vznet.github.com/mongo-jackson-mapper , but it's somehow harder to use and it's not Scala specific, more about differences can be found here https://groups.google.com/d/msg/play-framework/K7IrXyXvL8w/SElGiQ5kPaEJ   
 
 Steps
 -----
 
-* Complete the tutorial mentioned before if you haven't already done it.
+* Complete the official todo tutorial.
 
-* Replace project/Build.scala file by the one from this repo.
+* Replace build.sbt and project/plugins.sbt files with the ones from this repo.
 
-* Type "play dependencies" in the project's root folder.
+* Execute "play dependencies" in the project's root folder.
 
-* Replace other files in your application by files from this repo.
+* Replace other files in your application by ones from this repo (test/ folder is optional).
 
 * Don't forget to start mongodb daemon! It should use the default host (localhost) and the default port.
 
 * Run the application, if everything works, congratulations, you've done it!
 
-* Have fun!
-
 What next?
 ----------
 
-I tried to keep this tutorial as simple as possible, there is, obviously, much more things to do if you want to create a large-scale application.
-
-First of all there is a problem with ClassCastExceptions, as *tmbo* said:
-
-```
-If the application grows, you will run into ClassCastExceptions if you don't use our own salat-context
-(it's because of plays dynamic class reloading and stuff). The context should look like https://github.com/andypetrella/classloading-problem/blob/master/app/models/salatctx.scala
-```
-
-There is also a MongoDB Salat plugin for Play Framework 2 (Scala only) with an example application (address book) that is much more complete than my "First-step tutorial", it can be found here https://github.com/leon/play-salat 
+You may want to check a MongoDB Salat plugin for Play Framework 2 (Scala only) that can be found here https://github.com/leon/play-salat 
