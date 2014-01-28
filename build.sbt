@@ -1,4 +1,4 @@
-name := "helloApp"
+name := "todoScalaMongodb"
 
 version := "1.0-SNAPSHOT"
 
