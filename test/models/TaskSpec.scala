@@ -27,7 +27,6 @@ class TaskSpec extends Specification with BeforeExample {
 
     "be deletable" in new WithFakeApplication {
       val taskIdOption = Task.create("Test Label")
-      println(TaskDAO.collection.getFullName())
       val taskId = taskIdOption.getOrElse(throw new PlayException(
         "Database error",
         "Could not get the ID of the created task, check your database configuration"
