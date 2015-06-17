@@ -1,20 +1,20 @@
 package controllers
 
-import play.api._
-import play.api.mvc._
-import play.api.data._
-import play.api.data.Forms._
-
 import models._
+import play.api.data.Forms._
+import play.api.data._
+import play.api.mvc._
+import play.api.i18n._
+import javax.inject.Inject
 
-object Application extends Controller {
+class Application  @Inject()  (val messagesApi: MessagesApi) extends Controller with I18nSupport {
 
-  val taskForm = Form (
+  val taskForm = Form(
     "label" -> nonEmptyText
   )
-  
+
   def index = Action {
-    Redirect(routes.Application.tasks)
+    Redirect(routes.Application.tasks())
   }
 
   def tasks = Action {
@@ -26,14 +26,14 @@ object Application extends Controller {
       errors => BadRequest(views.html.index(Task.all(), errors)),
       label => {
         Task.create(label)
-        Redirect(routes.Application.tasks)
+        Redirect(routes.Application.tasks())
       }
     )
   }
 
   def deleteTask(id: String) = Action {
     Task.delete(id)
-    Redirect(routes.Application.tasks)
+    Redirect(routes.Application.tasks())
   }
-  
+
 }

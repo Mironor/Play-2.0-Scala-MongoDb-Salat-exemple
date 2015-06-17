@@ -1,4 +1,4 @@
-Updated for play 2.2.1
+*Updated for play 2.4.0*
 Added test specs
 
 

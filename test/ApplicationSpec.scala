@@ -15,10 +15,6 @@ class ApplicationSpec extends Specification {
 
   "Application" should {
 
-    "send 404 on a bad request" in new WithApplication{
-      route(FakeRequest(GET, "/boum")) must beNone
-    }
-
     "redirect to /task page when requesting index page" in new WithApplication{
       val home = route(FakeRequest(GET, "/")).get
 
